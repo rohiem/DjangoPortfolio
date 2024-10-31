@@ -1,0 +1,23 @@
+{% extends "lila.html" %}
+{% block content1 %}
+{% load static %}
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Rahim's Portfolio</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">follow my journey to become fullstack developer from python ,django ,react and their libraries to deployment and cloud</h2>
+        </div>
+    </div>
+</header>
+{% endblock content1 %}
+{% block content %}
+{% load static %}
+<h1 class="text-white mb-4 text-center">to see my &nbspresume&nbsp visit <a class="btn btn-dark" href="{% url "about" %}">&nbsp&nbspabout&nbsp&nbsp</a></h1>
+<br><br>
+ <h1 class="text-white mb-4 text-center">to see my projects visit  <a class="btn btn-dark" href="{% url "portfolio:models" %}">projects</a></h1>
+<div class="form-group purple-border">
+    <br><br><br><br>
+    <img class="img-fluid" src="{% static 'img/roma.jpeg' %}" alt="" />
+    <br><br></div>
+
+{% endblock content %}

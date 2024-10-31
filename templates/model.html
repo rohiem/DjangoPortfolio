@@ -1,0 +1,51 @@
+{% extends "lila.html" %}
+{% block content %}
+ <h2 class="text-white mb-4 text-center">here is my projects click for more</h2>
+<div class="form-group purple-border">
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+        {% comment "" %} <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Position</th>
+            <th>Actions</th>
+          </tr>{% endcomment %} 
+        </thead>
+        <tbody>
+            {% for m in models %}
+          <tr>
+            <td>
+              <div class="d-flex align-items-center">
+                <img
+                    src="{{m.image.url}}"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                    />
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1"><span>     &nbsp; &nbsp;      </span>{{ m.title}}</p>
+                      </div>
+              </div> 
+            </td>
+            <td>
+              <p class="fw-normal mb-1">{{ m.desc}}</p>
+              <p class="text-muted mb-0">{{m.created}}</p>
+            </td>
+           
+            <td> <a
+                href="{% url 'portfolio:modeldetail' m.slug %}"
+                target="_blank"
+                class="btn btn-primary btn-md"
+                >VisiT
+               
+              </a>
+              
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock content %}
