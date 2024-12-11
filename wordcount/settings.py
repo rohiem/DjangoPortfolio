@@ -25,7 +25,7 @@ SECRET_KEY = '4c*l#8_5owhb7gps7@n7pvxe2bm#cypp=y8$z4wfj!_!b%f3-#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -75,10 +75,20 @@ WSGI_APPLICATION = 'wordcount.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+} """
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':  'my_database',
+        'USER': 'postgres',
+        'PASSWORD': '33883246',
+        'HOST': 'postgres',
+        'PORT': '5432',
     }
 }
 
@@ -122,3 +132,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[os.path.join(BASE_DIR,'static')]
+STATIC_ROOT = os.path.join(os.path.join(BASE_DIR, 'staticfiles'))

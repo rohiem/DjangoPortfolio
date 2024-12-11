@@ -11,4 +11,5 @@ def home(request):
         
 
 def about(request):
-    return render(request, "about.html", )
+    cont="I LOVE YOU"
+    return render(request, "about.html", context={"load":cont})
